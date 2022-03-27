@@ -6,8 +6,14 @@ namespace StringGenerator.Benchmark;
 public class Benchy
 {
     [Benchmark]
-    public void NewIssueTrackingCode()
+    public void UserName()
     {
-        Generator.NewIssueTrackingCode();
+        Generator.UserName();
+    }
+
+    [Benchmark]
+    public void NewUserName()
+    {
+        Generator.NewUserName();
     }
 }

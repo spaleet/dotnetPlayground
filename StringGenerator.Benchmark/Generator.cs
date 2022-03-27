@@ -35,7 +35,7 @@ public class Generator
             sb.Append(numbers[random.Next(0, numbers.Length)]);
         }
 
-        return sb.ToString();
+        return sb.ToString().ToUpper();
     }
 
     #endregion
@@ -76,6 +76,25 @@ public class Generator
 
         return result;
     }
+
+    public static string NewUserName()
+    {
+        ReadOnlySpan<char> numbers = "0123456789";
+        ReadOnlySpan<char> letters = "ABCDEFGHJKMNPQRSTUVWXYZ";
+
+        var sb = new StringBuilder();
+
+        Random random = new();
+
+        for (int i = 0; i < 4; i++)
+            sb.Append(letters[random.Next(0, letters.Length)]);
+
+        for (int i = 0; i < 4; i++)
+            sb.Append(numbers[random.Next(0, numbers.Length)]);
+
+        return sb.ToString().ToUpper();
+    }
+
 
     #endregion
 
