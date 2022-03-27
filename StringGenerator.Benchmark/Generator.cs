@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Text;
+using System.Text.RegularExpressions;
 
 namespace StringGenerator.Benchmark;
 public class Generator
@@ -20,16 +21,11 @@ public class Generator
         return Guid.NewGuid().ToString().ToUpper().Substring(0, 5);
     }
 
-    public static string Code(int subString = 5)
-    {
-        return Guid.NewGuid().ToString().ToUpper().Substring(0, subString);
-    }
-
     #endregion
 
     #region IssueTrackingCode
 
-    public static string IssueTrackingCode()
+    public static string OldIssueTrackingCode()
     {
         string section1 = "";
         string section2 = "";
@@ -59,6 +55,27 @@ public class Generator
         }
 
         return $"{section1}-{section2}";
+    }
+
+    public static string NewIssueTrackingCode()
+    {
+        var sb = new StringBuilder();
+
+        Random random = new();
+
+        for (int i = 0; i < 4; i++)
+        {
+            sb.Append(Numbers[random.Next(0, Numbers.Length)]);
+        }
+
+        sb.Append('-');
+
+        for (int i = 0; i < 4; i++)
+        {
+            sb.Append(Numbers[random.Next(0, Numbers.Length)]);
+        }
+
+        return sb.ToString();
     }
 
     #endregion
