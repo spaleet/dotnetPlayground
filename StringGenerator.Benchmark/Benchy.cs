@@ -6,12 +6,6 @@ namespace StringGenerator.Benchmark;
 public class Benchy
 {
     [Benchmark]
-    public void OldIssueTrackingCode()
-    {
-        Generator.OldIssueTrackingCode();
-    }
-
-    [Benchmark]
     public void NewIssueTrackingCode()
     {
         Generator.NewIssueTrackingCode();

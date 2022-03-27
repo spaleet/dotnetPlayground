@@ -4,16 +4,6 @@ using System.Text.RegularExpressions;
 namespace StringGenerator.Benchmark;
 public class Generator
 {
-    #region Constants
-
-    private readonly static char[] Letters = "ABCDEFGHJKMNPQRSTUVWXYZ".ToCharArray();
-
-    private readonly static char[] Numbers = "0123456789".ToCharArray();
-
-    private readonly static char[] Chars = "$%#@!*?;:abcdefghijklmnopqrstuvxxyzABCDEFGHIJKLMNOPQRSTUVWXYZ^&".ToCharArray();
-
-    #endregion
-
     #region Code
 
     public static string Code()
@@ -25,54 +15,24 @@ public class Generator
 
     #region IssueTrackingCode
 
-    public static string OldIssueTrackingCode()
-    {
-        string section1 = "";
-        string section2 = "";
-
-        int n = Numbers.Length;
-
-        Random random = new Random();
-
-        for (int i = 0; i < 4; i++)
-        {
-            string character = Numbers[random.Next(0, n)].ToString();
-
-            while (section1.Contains(character))
-                character = Numbers[random.Next(0, n)].ToString().ToUpper();
-
-            section1 += character;
-        }
-
-        for (int i = 0; i < 4; i++)
-        {
-            string character = Numbers[random.Next(0, n)].ToString();
-
-            while (section2.Contains(character))
-                character = Numbers[random.Next(0, n)].ToString().ToUpper();
-
-            section2 += character;
-        }
-
-        return $"{section1}-{section2}";
-    }
-
     public static string NewIssueTrackingCode()
     {
+        ReadOnlySpan<char> numbers = "0123456789";
+
         var sb = new StringBuilder();
 
         Random random = new();
 
         for (int i = 0; i < 4; i++)
         {
-            sb.Append(Numbers[random.Next(0, Numbers.Length)]);
+            sb.Append(numbers[random.Next(0, numbers.Length)]);
         }
 
         sb.Append('-');
 
         for (int i = 0; i < 4; i++)
         {
-            sb.Append(Numbers[random.Next(0, Numbers.Length)]);
+            sb.Append(numbers[random.Next(0, numbers.Length)]);
         }
 
         return sb.ToString();
@@ -84,29 +44,32 @@ public class Generator
 
     public static string UserName()
     {
+        ReadOnlySpan<char> numbers = "0123456789";
+        ReadOnlySpan<char> letters = "ABCDEFGHJKMNPQRSTUVWXYZ";
+
         string result = "";
 
-        int l = Letters.Length;
-        int n = Numbers.Length;
+        int l = letters.Length;
+        int n = numbers.Length;
 
         Random random = new();
 
         for (int i = 0; i < 4; i++)
         {
-            string character = Letters[random.Next(0, l)].ToString();
+            string character = letters[random.Next(0, l)].ToString();
 
             while (result.Contains(character))
-                character = Letters[random.Next(0, l)].ToString().ToUpper();
+                character = letters[random.Next(0, l)].ToString().ToUpper();
 
             result += character;
         }
 
         for (int i = 0; i < 4; i++)
         {
-            string character = Numbers[random.Next(0, n)].ToString();
+            string character = numbers[random.Next(0, n)].ToString();
 
             while (result.Contains(character))
-                character = Numbers[random.Next(0, n)].ToString().ToUpper();
+                character = numbers[random.Next(0, n)].ToString().ToUpper();
 
             result += character;
         }
@@ -120,13 +83,15 @@ public class Generator
 
     public static string Password()
     {
+        ReadOnlySpan<char> chars = "$%#@!*?;:abcdefghijklmnopqrstuvxxyzABCDEFGHIJKLMNOPQRSTUVWXYZ^&";
+
         var random = new Random();
         var password = Guid.NewGuid().ToString().Substring(4, 9);
 
         var regex = new Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$");
 
         while (!regex.IsMatch(password))
-            password += Chars[random.Next(Chars.Length)].ToString();
+            password += chars[random.Next(chars.Length)].ToString();
 
         return password;
     }
