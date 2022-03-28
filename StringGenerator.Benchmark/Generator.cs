@@ -1,5 +1,4 @@
 ﻿using System.Text;
-using System.Text.RegularExpressions;
 
 namespace StringGenerator.Benchmark;
 public class Generator
@@ -95,25 +94,6 @@ public class Generator
         return sb.ToString().ToUpper();
     }
 
-
-    #endregion
-
-    #region Password
-
-    public static string Password()
-    {
-        ReadOnlySpan<char> chars = "$%#@!*?;:abcdefghijklmnopqrstuvxxyzABCDEFGHIJKLMNOPQRSTUVWXYZ^&";
-
-        var random = new Random();
-        var password = Guid.NewGuid().ToString().Substring(4, 9);
-
-        var regex = new Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$");
-
-        while (!regex.IsMatch(password))
-            password += chars[random.Next(chars.Length)].ToString();
-
-        return password;
-    }
 
     #endregion
 }
