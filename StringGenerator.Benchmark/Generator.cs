@@ -120,13 +120,15 @@ public class Generator
 
         sb.Append(pc.GetYear(value));
         sb.Append('/');
-        sb.Append(pc.GetMonth(value));
+        sb.Append(pc.GetMonth(value).ToString("D2"));
         sb.Append('/');
-        sb.Append(pc.GetDayOfMonth(value));
+        sb.Append(pc.GetDayOfMonth(value).ToString("D2"));
         sb.Append(' ');
         sb.Append(pc.GetHour(value));
         sb.Append(':');
         sb.Append(pc.GetMinute(value));
+        sb.Append(':');
+        sb.Append(pc.GetSecond(value));
 
         return sb.ToString();
     }

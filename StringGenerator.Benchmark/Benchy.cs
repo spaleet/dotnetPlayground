@@ -8,12 +8,12 @@ public class Benchy
     [Benchmark]
     public void Old()
     {
-        Generator.OldPersianDate();
+        DateConvertor.OldToMiladi();
     }
 
     [Benchmark]
     public void New()
     {
-        Generator.NewPersianDate();
+        DateConvertor.NewToMiladi();
     }
 }
