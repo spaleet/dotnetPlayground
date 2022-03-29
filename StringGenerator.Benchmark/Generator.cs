@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Globalization;
+using System.Text;
 
 namespace StringGenerator.Benchmark;
 public class Generator
@@ -92,6 +93,42 @@ public class Generator
             sb.Append(numbers[random.Next(0, numbers.Length)]);
 
         return sb.ToString().ToUpper();
+    }
+
+
+    #endregion
+
+    #region PersianDate
+
+    public static string OldPersianDate()
+    {
+        var value = DateTime.UtcNow;
+
+        var pc = new PersianCalendar();
+        return pc.GetYear(value) + "/" + pc.GetMonth(value).ToString("00") + "/" +
+               pc.GetDayOfMonth(value).ToString("00") + " " +
+               pc.GetHour(value) + ":" + pc.GetMinute(value);
+    }
+
+    public static string NewPersianDate()
+    {
+        var sb = new StringBuilder();
+
+        var value = DateTime.UtcNow;
+
+        var pc = new PersianCalendar();
+
+        sb.Append(pc.GetYear(value));
+        sb.Append('/');
+        sb.Append(pc.GetMonth(value));
+        sb.Append('/');
+        sb.Append(pc.GetDayOfMonth(value));
+        sb.Append(' ');
+        sb.Append(pc.GetHour(value));
+        sb.Append(':');
+        sb.Append(pc.GetMinute(value));
+
+        return sb.ToString();
     }
 
 

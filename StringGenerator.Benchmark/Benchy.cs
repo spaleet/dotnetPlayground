@@ -8,12 +8,12 @@ public class Benchy
     [Benchmark]
     public void Old()
     {
-        Generator.NewUserName();
+        Generator.OldPersianDate();
     }
 
     [Benchmark]
     public void New()
     {
-        GeneratorT.NewUserName();
+        Generator.NewPersianDate();
     }
 }
