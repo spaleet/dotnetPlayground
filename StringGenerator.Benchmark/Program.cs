@@ -1,4 +1,7 @@
-﻿using BenchmarkDotNet.Running;
-using StringGenerator.Benchmark;
+﻿using StringGenerator.Benchmark;
 
-BenchmarkRunner.Run<Benchy>();
+//BenchmarkRunner.Run<Benchy>();
+
+Console.WriteLine(DateConvertor.GetShortDayOfWeek(DateTime.Now));
+
+Console.ReadKey();
