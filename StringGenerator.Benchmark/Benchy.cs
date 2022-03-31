@@ -25,7 +25,6 @@ public class Benchy
     public void NewDayOfWeekV2()
     {
         var dt = DateTime.Now;
-        ReadOnlySpan<char> d = DateConvertor.GetDayOfWeek(dt);
-        var t = d.Slice(0, 1).ToString();
+        var t = DateConvertor.GetShortDayOfWeek(dt);
     }
 }

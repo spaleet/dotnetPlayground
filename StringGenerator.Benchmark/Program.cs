@@ -1,7 +1,8 @@
-﻿using StringGenerator.Benchmark;
+﻿using BenchmarkDotNet.Running;
+using StringGenerator.Benchmark;
 
-//BenchmarkRunner.Run<Benchy>();
+BenchmarkRunner.Run<Benchy>();
 
-Console.WriteLine(DateConvertor.GetShortDayOfWeek(DateTime.Now));
+//Console.WriteLine(DateTime.Now.ToString("MMMM", CultureInfo.CreateSpecificCulture("fa")));
 
-Console.ReadKey();
+//Console.ReadKey();
