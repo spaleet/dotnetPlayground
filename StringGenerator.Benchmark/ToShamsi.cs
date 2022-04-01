@@ -21,8 +21,9 @@
         public static string ToShortShamsiDate(this DateTime dateTime)
         {
             PersianDateShamsi persianDateShamsi = new PersianDateShamsi();
-            return persianDateShamsi.GetShortShamsiYear(dateTime) + "/" + persianDateShamsi.GetShamsiMonthString(dateTime) + "/" + persianDateShamsi.GetShamsiDayString(dateTime);
+            return persianDateShamsi.GetShortShamsiYear(dateTime) + '/' + persianDateShamsi.GetShamsiMonthString(dateTime) + '/' + persianDateShamsi.GetShamsiDayString(dateTime);
         }
+
         /// <summary>
         /// Get Long Shamsi Date From Miladi Year
         /// </summary>
@@ -32,6 +33,12 @@
         {
             PersianDateShamsi persianDateShamsi = new PersianDateShamsi();
             return persianDateShamsi.GetShamsiDayName(dateTime) + " " + persianDateShamsi.GetShamsiDay(dateTime) + " " + persianDateShamsi.GetShamsiMonthName(dateTime) + " " + persianDateShamsi.GetShamsiYear(dateTime);
+        }
+
+        public static string ToNewLongShamsiDate(this DateTime dateTime)
+        {
+            PersianDateShamsi persianDateShamsi = new PersianDateShamsi();
+            return $"{persianDateShamsi.GetShamsiDayName(dateTime)} {persianDateShamsi.GetShamsiDay(dateTime)} {persianDateShamsi.GetShamsiMonthName(dateTime)} {persianDateShamsi.GetShamsiYear(dateTime)}";
         }
     }
 }

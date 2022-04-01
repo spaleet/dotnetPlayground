@@ -1,5 +1,4 @@
 ﻿using BenchmarkDotNet.Attributes;
-using System.Globalization;
 
 namespace StringGenerator.Benchmark;
 
@@ -7,17 +6,16 @@ namespace StringGenerator.Benchmark;
 public class Benchy
 {
     [Benchmark]
-    public void GetShortShamsiYear()
+    public void OldToLongShamsiDate()
     {
         var dt = DateTime.Now;
-        var g = dt.ToString("yy", CultureInfo.CreateSpecificCulture("fa"));
+        var s = dt.ToLongShamsiDate();
     }
 
     [Benchmark]
-    public void NewGetShortShamsiYear()
+    public void NewToLongShamsiDate()
     {
         var dt = DateTime.Now;
-        var pc = new PersianCalendar();
-        var g = pc.GetYear(dt).ToString().Substring(2, 2);
+        var s = dt.ToNewLongShamsiDate();
     }
 }

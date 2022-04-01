@@ -38,7 +38,8 @@ namespace StringGenerator.Benchmark
         /// <returns></returns>
         public string GetShortShamsiYear(DateTime dateTime)
         {
-            return dateTime.ToString("yy", CultureInfo.CreateSpecificCulture("fa"));
+            var pc = new PersianCalendar();
+            return pc.GetYear(dateTime).ToString().Substring(2, 2);
         }
         /// <summary>
         /// Get Short Shamsi Year From Miladi Year In String
