@@ -1,5 +1,4 @@
 ﻿using BenchmarkDotNet.Attributes;
-using System.Globalization;
 
 namespace StringGenerator.Benchmark;
 
@@ -7,17 +6,16 @@ namespace StringGenerator.Benchmark;
 public class Benchy
 {
     [Benchmark]
-    public void OldMonthName()
+    public void OldToShamsiDate()
     {
         var dt = DateTime.Now;
-        var y = dt.ToString("MMMM", CultureInfo.CreateSpecificCulture("fa"));
+
     }
 
     [Benchmark]
-    public void NewMonthName()
+    public void NewToShamsiDate()
     {
         var dt = DateTime.Now;
 
-        var t = DateConvertor.GetMonth(dt);
     }
 }
