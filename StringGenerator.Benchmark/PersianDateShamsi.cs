@@ -41,6 +41,16 @@ namespace StringGenerator.Benchmark
             return dateTime.ToString("yy", CultureInfo.CreateSpecificCulture("fa"));
         }
         /// <summary>
+        /// Get Short Shamsi Year From Miladi Year In String
+        /// </summary>
+        /// <param name="dateTime">Enter The Jalali DateTime</param>
+        /// <returns></returns>
+        public string NewGetShortShamsiYear(DateTime dateTime)
+        {
+            var pc = new PersianCalendar();
+            return pc.GetYear(dateTime).ToString().Substring(2, 2);
+        }
+        /// <summary>
         /// Get Shamsi Year From Miladi Year In String
         /// </summary>
         /// <param name="dateTime">Enter The Jalali DateTime</param>

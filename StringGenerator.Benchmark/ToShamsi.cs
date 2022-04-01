@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace StringGenerator.Benchmark
+﻿namespace StringGenerator.Benchmark
 {
     public static class ToShamsi
     {
@@ -9,27 +7,10 @@ namespace StringGenerator.Benchmark
         /// </summary>
         /// <param name="dateTime">Enter The Jalali DateTime</param>
         /// <returns></returns>
-        public static string OldToShamsiDate(this DateTime dateTime)
+        public static string ToShamsiDate(this DateTime dateTime)
         {
             PersianDateShamsi persianDateShamsi = new PersianDateShamsi();
-            return persianDateShamsi.GetShamsiYearToString(dateTime) + "/" + persianDateShamsi.GetShamsiMonthString(dateTime) + "/" + persianDateShamsi.GetShamsiDayString(dateTime);
-        }
-        /// <summary>
-        /// Get Shamsi Date From Miladi Year
-        /// </summary>
-        /// <param name="dateTime">Enter The Jalali DateTime</param>
-        /// <returns></returns>
-        public static string NewToShamsiDate(this DateTime dateTime)
-        {
-            PersianDateShamsi persianDateShamsi = new PersianDateShamsi();
-            var sb = new StringBuilder();
-            sb.Append(persianDateShamsi.GetShamsiYearToString(dateTime));
-            sb.Append('/');
-            sb.Append(persianDateShamsi.GetShamsiMonthString(dateTime));
-            sb.Append('/');
-            sb.Append(persianDateShamsi.GetShamsiDayString(dateTime));
-
-            return sb.ToString();
+            return persianDateShamsi.GetShamsiYear(dateTime) + '/' + persianDateShamsi.GetShamsiMonthString(dateTime) + '/' + persianDateShamsi.GetShamsiDayString(dateTime);
         }
 
         /// <summary>
