@@ -7,24 +7,17 @@ namespace StringGenerator.Benchmark;
 public class Benchy
 {
     [Benchmark]
-    public void OldShortDayOfWeek()
+    public void OldMonthName()
     {
         var dt = DateTime.Now;
-        var y = dt.ToString("dddd", CultureInfo.CreateSpecificCulture("fa")).Substring(0, 1);
+        var y = dt.ToString("MMMM", CultureInfo.CreateSpecificCulture("fa"));
     }
 
     [Benchmark]
-    public void NewDayOfWeekV1()
+    public void NewMonthName()
     {
         var dt = DateTime.Now;
 
-        var t = DateConvertor.GetDayOfWeek(dt).Substring(0, 1);
-    }
-
-    [Benchmark]
-    public void NewDayOfWeekV2()
-    {
-        var dt = DateTime.Now;
-        var t = DateConvertor.GetShortDayOfWeek(dt);
+        var t = DateConvertor.GetMonth(dt);
     }
 }
