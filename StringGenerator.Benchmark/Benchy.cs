@@ -9,6 +9,7 @@ public class Benchy
     public void OldToShamsiDate()
     {
         var dt = DateTime.Now;
+        var s = dt.OldToShamsiDate();
 
     }
 
@@ -16,6 +17,6 @@ public class Benchy
     public void NewToShamsiDate()
     {
         var dt = DateTime.Now;
-
+        var s = dt.NewToShamsiDate();
     }
 }
