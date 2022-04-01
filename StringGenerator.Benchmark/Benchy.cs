@@ -6,16 +6,16 @@ namespace StringGenerator.Benchmark;
 public class Benchy
 {
     [Benchmark]
-    public void OldToLongShamsiDate()
+    public void OldToShortShamsiDate()
     {
         var dt = DateTime.Now;
-        var s = dt.ToLongShamsiDate();
+        var s = dt.ToShortShamsiDate();
     }
 
     [Benchmark]
-    public void NewToLongShamsiDate()
+    public void NewToShortShamsiDate()
     {
         var dt = DateTime.Now;
-        var s = dt.ToNewLongShamsiDate();
+        var s = dt.ToNewShortShamsiDate();
     }
 }
