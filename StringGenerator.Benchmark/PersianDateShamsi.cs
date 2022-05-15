@@ -9,7 +9,7 @@ namespace StringGenerator.Benchmark
         PersianCalendar persianCalendar;
         string[] DaysOfWeek;
         string[] DaysOfWeekShort;
-        string[] Months;
+        public string[] Months;
 
         public PersianDateShamsi()
         {
