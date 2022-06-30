@@ -1,6 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Playground.Api.Events;
+using Playground.Api.Models;
 
 namespace Playground.Api.Controllers;
 
@@ -18,9 +19,9 @@ public class MessageController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> SayHello([FromBody] string from, string message)
+    public async Task<IActionResult> SayHello([FromBody] SayHelloDto model)
     {
-        await _mediator.Publish(new SayHelloEvent(message));
+        await _mediator.Publish(new SayHelloEvent(model.Message));
 
         return Ok();
     }
