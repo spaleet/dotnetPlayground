@@ -4,6 +4,16 @@ namespace Playground.Api.Events;
 
 public class SayHelloEvent : INotification
 {
+    public SayHelloEvent()
+    {
+
+    }
+
+    public SayHelloEvent(string message)
+    {
+        Message = message;
+    }
+
     public string Message { get; set; }
 }
 
