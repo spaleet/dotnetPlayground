@@ -25,6 +25,6 @@ app.UseAuthorization();
 app.UseHangfireDashboard();
 
 app.MapControllers();
-app.MapHangfireDashboard();
+app.MapHangfireDashboard("/jobs");
 
 app.Run();

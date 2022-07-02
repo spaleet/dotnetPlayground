@@ -15,6 +15,7 @@ public static class ConfigureServices
         {
             options.UseSqlServer(connectionString);
         });
+        services.AddScoped<AppDbContextInitializer>();
 
         services.AddHangfire(configuration => configuration
                 .SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
