@@ -1,8 +1,8 @@
 ﻿using StringGenerator.Benchmark;
 
-string txt = "Kanye West - My Beautiful Dark Twisted Fantasy";
+string txt = "old text";
 
-var l = Generator.Reg(ref txt);
+Playground.RefTask(ref txt);
 
 Console.WriteLine(5 / 2);
 
