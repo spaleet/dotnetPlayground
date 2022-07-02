@@ -4,18 +4,20 @@ using Microsoft.AspNetCore.Mvc;
 namespace Playground.Api.BackgroundJob.Controllers;
 
 [ApiController]
-[Route("api/v1/[controller]")]
+[Route("api/[controller]")]
 public class JobsController : ControllerBase
 {
     #region ctor
 
     private readonly ILogger<JobsController> _logger;
     private readonly IBackgroundJobClient _backgroundJobClient;
+    private readonly IRecurringJobManager _recurringJobManager;
 
-    public JobsController(ILogger<JobsController> logger, IBackgroundJobClient backgroundJobClient)
+    public JobsController(ILogger<JobsController> logger, IBackgroundJobClient backgroundJobClient, IRecurringJobManager recurringJobManager)
     {
         _logger = logger;
         _backgroundJobClient = backgroundJobClient;
+        _recurringJobManager = recurringJobManager;
     }
 
     #endregion
@@ -55,6 +57,19 @@ public class JobsController : ControllerBase
 
     #endregion
 
+    #region Recurring 
+
+    [HttpPost("recurring")]
+    public IActionResult Recurring()
+    {
+        _recurringJobManager.AddOrUpdate("recurring_test", () => RecurringTask(), Cron.Daily);
+
+        return Ok();
+    }
+
+    #endregion
+
+    #region Tasks
 
     [NonAction]
     public Task StartSomeTask(string message)
@@ -64,4 +79,15 @@ public class JobsController : ControllerBase
 
         return Task.CompletedTask;
     }
+
+    [NonAction]
+    public Task RecurringTask()
+    {
+        // Recurring Task
+        _logger.LogInformation("Recurring Task");
+
+        return Task.CompletedTask;
+    }
+
+    #endregion
 }
