@@ -5,13 +5,17 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Console", "Console\Playground.Console\Playground.Console.csproj", "{6131DDF3-D009-401D-9ABA-0B69EC97997C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Api.Notification", "APIs\Notification\Playground.Api.Notification\Playground.Api.Notification.csproj", "{CE46B295-450D-49DB-BE08-D8195C1FDA76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Api.Notification", "APIs\Notification\Playground.Api.Notification\Playground.Api.Notification.csproj", "{CE46B295-450D-49DB-BE08-D8195C1FDA76}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIs", "APIs", "{1BAB90E7-2F48-4CCF-933E-BB441DD3F757}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console", "Console", "{A3BA08C7-FFCF-4804-902B-0B25723C93A3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notification", "Notification", "{3AC8F7E9-FE21-489E-804F-CA3361E0313C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BackgroundJob", "BackgroundJob", "{D32A488C-58CE-4BDE-B424-D68C6CD7DBD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Api.BackgroundJob", "APIs\BackgroundJob\Playground.Api.BackgroundJob\Playground.Api.BackgroundJob.csproj", "{2FDDF12F-E6DF-4182-B5FB-74B3F14249AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,10 @@ Global
 		{CE46B295-450D-49DB-BE08-D8195C1FDA76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE46B295-450D-49DB-BE08-D8195C1FDA76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE46B295-450D-49DB-BE08-D8195C1FDA76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FDDF12F-E6DF-4182-B5FB-74B3F14249AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FDDF12F-E6DF-4182-B5FB-74B3F14249AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FDDF12F-E6DF-4182-B5FB-74B3F14249AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FDDF12F-E6DF-4182-B5FB-74B3F14249AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -35,6 +43,8 @@ Global
 		{6131DDF3-D009-401D-9ABA-0B69EC97997C} = {A3BA08C7-FFCF-4804-902B-0B25723C93A3}
 		{CE46B295-450D-49DB-BE08-D8195C1FDA76} = {3AC8F7E9-FE21-489E-804F-CA3361E0313C}
 		{3AC8F7E9-FE21-489E-804F-CA3361E0313C} = {1BAB90E7-2F48-4CCF-933E-BB441DD3F757}
+		{D32A488C-58CE-4BDE-B424-D68C6CD7DBD5} = {1BAB90E7-2F48-4CCF-933E-BB441DD3F757}
+		{2FDDF12F-E6DF-4182-B5FB-74B3F14249AC} = {D32A488C-58CE-4BDE-B424-D68C6CD7DBD5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F6F416B0-FE81-4DCE-B85B-CB958F7407BF}
