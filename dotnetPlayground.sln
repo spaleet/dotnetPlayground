@@ -15,7 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notification", "Notificatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BackgroundJob", "BackgroundJob", "{D32A488C-58CE-4BDE-B424-D68C6CD7DBD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Api.BackgroundJob", "APIs\BackgroundJob\Playground.Api.BackgroundJob\Playground.Api.BackgroundJob.csproj", "{2FDDF12F-E6DF-4182-B5FB-74B3F14249AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Api.BackgroundJob", "APIs\BackgroundJob\Playground.Api.BackgroundJob\Playground.Api.BackgroundJob.csproj", "{2FDDF12F-E6DF-4182-B5FB-74B3F14249AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MediaManager", "MediaManager", "{9940036A-47A8-42A9-BAF1-74E37E0A6C08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Api.MediaManager", "APIs\MediaManager\Playground.Api.MediaManager\Playground.Api.MediaManager.csproj", "{1297B19D-621A-434F-AA52-1E7477CB87F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +39,10 @@ Global
 		{2FDDF12F-E6DF-4182-B5FB-74B3F14249AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FDDF12F-E6DF-4182-B5FB-74B3F14249AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FDDF12F-E6DF-4182-B5FB-74B3F14249AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1297B19D-621A-434F-AA52-1E7477CB87F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1297B19D-621A-434F-AA52-1E7477CB87F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1297B19D-621A-434F-AA52-1E7477CB87F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1297B19D-621A-434F-AA52-1E7477CB87F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +53,8 @@ Global
 		{3AC8F7E9-FE21-489E-804F-CA3361E0313C} = {1BAB90E7-2F48-4CCF-933E-BB441DD3F757}
 		{D32A488C-58CE-4BDE-B424-D68C6CD7DBD5} = {1BAB90E7-2F48-4CCF-933E-BB441DD3F757}
 		{2FDDF12F-E6DF-4182-B5FB-74B3F14249AC} = {D32A488C-58CE-4BDE-B424-D68C6CD7DBD5}
+		{9940036A-47A8-42A9-BAF1-74E37E0A6C08} = {1BAB90E7-2F48-4CCF-933E-BB441DD3F757}
+		{1297B19D-621A-434F-AA52-1E7477CB87F5} = {9940036A-47A8-42A9-BAF1-74E37E0A6C08}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F6F416B0-FE81-4DCE-B85B-CB958F7407BF}
