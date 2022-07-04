@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using Playground.Api.MediaManager.Data.Models;
 
 namespace Playground.Api.MediaManager.Data.Services;
 
@@ -39,9 +40,21 @@ public class MediaService : IMediaService
 
     #region CreateMedia
 
-    public Task<string> CreateMedia(string id)
+    public async Task<string> CreateMedia(CreateMediaDto request)
     {
-        throw new NotImplementedException();
+        using var stream = new MemoryStream();
+        await request.OpenReadStream().CopyToAsync(stream);
+
+        var media = new Media
+        {
+            Content = stream.ToArray(),
+            FileName = request.FileName,
+            ContentType = request.ContentType
+        };
+
+        await _collection.InsertOneAsync(media);
+
+        return media.Id;
     }
 
     #endregion
