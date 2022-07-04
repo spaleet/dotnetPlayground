@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace Playground.Api.MediaManager.Data.Models;
+namespace Playground.Api.MediaManager.Data.Entities;
 
 public class Media
 {

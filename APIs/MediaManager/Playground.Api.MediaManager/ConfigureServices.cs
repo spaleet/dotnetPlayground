@@ -9,9 +9,9 @@ public static class ConfigureServices
     {
         services.AddOptions();
         services.Configure<DbSetting>(config.GetSection("DiscountDbSettings"));
-        
+
         services.AddScoped<IMediaService, MediaService>();
-        
+
         services.AddControllers();
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();

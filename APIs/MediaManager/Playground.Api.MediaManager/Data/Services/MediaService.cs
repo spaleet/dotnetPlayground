@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-using Playground.Api.MediaManager.Data.Models;
 
 namespace Playground.Api.MediaManager.Data.Services;
 
@@ -37,4 +36,15 @@ public class MediaService : IMediaService
     }
 
     #endregion
+
+    #region CreateMedia
+
+    public Task<string> CreateMedia(string id)
+    {
+        throw new NotImplementedException();
+    }
+
+    #endregion
+
+
 }
