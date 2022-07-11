@@ -6,16 +6,18 @@ namespace Playground.Api.FileStream.Controllers;
 [Route("api/[controller]")]
 public class VideoController : ControllerBase
 {
-    private readonly ILogger<VideoController> _logger;
+    private readonly IWebHostEnvironment _environment;
 
-    public VideoController(ILogger<VideoController> logger)
+    public VideoController(IWebHostEnvironment environment)
     {
-        _logger = logger;
+        _environment = environment;
     }
 
     [HttpGet]
-    public IActionResult GetVideo()
+    public FileResult GetVideo()
     {
-        return Ok();
+        string path = Path.Combine(_environment.WebRootPath, "upload/video_mg.mp4");
+
+        return PhysicalFile(path, "application/octet-stream", enableRangeProcessing: true);
     }
 }
