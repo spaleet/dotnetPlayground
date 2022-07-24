@@ -9,12 +9,10 @@ namespace Playground.Api.Controllers;
 [Route("[controller]")]
 public class MessageController : ControllerBase
 {
-    private readonly ILogger<MessageController> _logger;
     private readonly IMediator _mediator;
 
-    public MessageController(ILogger<MessageController> logger, IMediator mediator)
+    public MessageController(IMediator mediator)
     {
-        _logger = logger;
         _mediator = mediator;
     }
 
@@ -22,7 +20,6 @@ public class MessageController : ControllerBase
     public async Task<IActionResult> SayHello([FromBody] SayHelloDto model)
     {
         await _mediator.Publish(new SayHelloEvent(model.Message));
-
         return Ok();
     }
 }
