@@ -5,7 +5,7 @@ namespace Playground.Api.Kafka;
 public class KafkaConsumerHostedService : IHostedService
 {
     private readonly ILogger<KafkaConsumerHostedService> _logger;
-    private IConsumer<Null, string> _consumer;
+    private IConsumer<long, string> _consumer;
 
     public KafkaConsumerHostedService(ILogger<KafkaConsumerHostedService> logger)
     {
@@ -14,28 +14,43 @@ public class KafkaConsumerHostedService : IHostedService
         {
             BootstrapServers = "localhost:9092",
             GroupId = "myApp-consumer-group",
-            AutoOffsetReset = AutoOffsetReset.Earliest
+            AutoOffsetReset = AutoOffsetReset.Latest
         };
 
-        _consumer = new ConsumerBuilder<Null, string>(config).Build();
+        _consumer = new ConsumerBuilder<long, string>(config)
+            .SetErrorHandler((_, e) => Console.WriteLine($"Error: {e.Reason}. Is Fatal: {e.IsFatal}"))
+            .Build();
 
     }
     
-    public async Task StartAsync(CancellationToken cancellationToken)
+    public Task StartAsync(CancellationToken cancellationToken)
     {
         _consumer.Subscribe("myApp");
         try
         {
-            var response = _consumer.Consume(cancellationToken);
+            while (true)
+            {
+                var result = _consumer.Consume(TimeSpan.FromSeconds(10));
+                var message = result?.Message?.Value;
+                if (message == null)
+                {
+                    continue;
+                }
 
-            if (response.Message != null)
-                _logger.LogInformation("Recievd : {msg}", response.Message.Value);
+                _logger.LogInformation($"Received: {result.Message.Key}:{message} from partition: {result.Partition.Value}");
+
+                _consumer.Commit(result);
+                _consumer.StoreOffset(result);
+            }
+
         }
         catch (Exception ex)
         {
             _logger.LogError(ex.Message);
             throw;
         }
+        
+        return Task.CompletedTask;
     }
 
     public Task StopAsync(CancellationToken cancellationToken)
