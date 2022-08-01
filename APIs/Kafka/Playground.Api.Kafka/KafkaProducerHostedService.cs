@@ -1,4 +1,5 @@
 ﻿using Confluent.Kafka;
+using Confluent.Kafka.Admin;
 
 namespace Playground.Api.Kafka;
 
@@ -21,6 +22,9 @@ public class KafkaProducerHostedService : IHostedService
 
     public async Task StartAsync(CancellationToken cancellationToken)
     {
+        await CreateTopic();
+
+
         for (int i = 0; i < 10; i++)
         {
             string msg = $"Value is {i}";
@@ -39,5 +43,23 @@ public class KafkaProducerHostedService : IHostedService
     {
         _producer?.Dispose();
         return Task.CompletedTask;
+    }
+
+    private async Task CreateTopic()
+    {
+        using var adminClient = new AdminClientBuilder(
+            new AdminClientConfig  
+            { 
+                BootstrapServers = "localhost:9092"
+            }).Build();
+        try
+        {
+            await adminClient.CreateTopicsAsync(new TopicSpecification[] {
+                    new TopicSpecification { Name = "myApp", ReplicationFactor = 1, NumPartitions = 1 } });
+        }
+        catch (CreateTopicsException e)
+        {
+            Console.WriteLine($"An error occured creating topic {e.Results[0].Topic}: {e.Results[0].Error.Reason}");
+        }
     }
 }
