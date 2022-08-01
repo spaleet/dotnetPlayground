@@ -23,7 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Api.MediaManager
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FileStream", "FileStream", "{EF86C9A4-2522-4F5E-86AB-6FFAA4A31635}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Api.FileStream", "APIs\FileStream\Playground.Api.FileStream\Playground.Api.FileStream.csproj", "{81E9C39C-8AA0-40DD-BD2A-11210A45E61F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Api.FileStream", "APIs\FileStream\Playground.Api.FileStream\Playground.Api.FileStream.csproj", "{81E9C39C-8AA0-40DD-BD2A-11210A45E61F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kafka", "Kafka", "{D0C50E4E-FC75-4E50-8F93-871C15A063A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Api.Kafka", "APIs\Kafka\Playground.Api.Kafka\Playground.Api.Kafka.csproj", "{73261670-F05E-40FD-A4CA-2F01AA942790}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,10 @@ Global
 		{81E9C39C-8AA0-40DD-BD2A-11210A45E61F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81E9C39C-8AA0-40DD-BD2A-11210A45E61F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81E9C39C-8AA0-40DD-BD2A-11210A45E61F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73261670-F05E-40FD-A4CA-2F01AA942790}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73261670-F05E-40FD-A4CA-2F01AA942790}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73261670-F05E-40FD-A4CA-2F01AA942790}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73261670-F05E-40FD-A4CA-2F01AA942790}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +73,8 @@ Global
 		{1297B19D-621A-434F-AA52-1E7477CB87F5} = {9940036A-47A8-42A9-BAF1-74E37E0A6C08}
 		{EF86C9A4-2522-4F5E-86AB-6FFAA4A31635} = {1BAB90E7-2F48-4CCF-933E-BB441DD3F757}
 		{81E9C39C-8AA0-40DD-BD2A-11210A45E61F} = {EF86C9A4-2522-4F5E-86AB-6FFAA4A31635}
+		{D0C50E4E-FC75-4E50-8F93-871C15A063A8} = {1BAB90E7-2F48-4CCF-933E-BB441DD3F757}
+		{73261670-F05E-40FD-A4CA-2F01AA942790} = {D0C50E4E-FC75-4E50-8F93-871C15A063A8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F6F416B0-FE81-4DCE-B85B-CB958F7407BF}
