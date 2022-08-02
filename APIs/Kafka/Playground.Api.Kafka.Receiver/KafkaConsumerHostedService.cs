@@ -14,7 +14,8 @@ public class KafkaConsumerHostedService : IHostedService
         {
             BootstrapServers = "localhost:9092",
             GroupId = "myApp-consumer-group",
-            AutoOffsetReset = AutoOffsetReset.Latest
+            AutoOffsetReset = AutoOffsetReset.Earliest,
+            EnablePartitionEof = true
         };
 
         _consumer = new ConsumerBuilder<long, string>(config)
@@ -30,17 +31,17 @@ public class KafkaConsumerHostedService : IHostedService
         {
             while (true)
             {
-                var result = _consumer.Consume(TimeSpan.FromSeconds(10));
-                var message = result?.Message?.Value;
-                if (message == null)
-                {
+                var result = _consumer.Consume(TimeSpan.FromSeconds(5));
+
+                if (result is null)
                     continue;
-                }
+                
+                var message = result?.Message?.Value;
 
                 _logger.LogInformation($"Received: {result.Message.Key}:{message} from partition: {result.Partition.Value}");
 
                 _consumer.Commit(result);
-                _consumer.StoreOffset(result);
+                //_consumer.StoreOffset(result);
             }
 
         }

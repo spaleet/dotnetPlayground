@@ -5,6 +5,7 @@ namespace Playground.Api.Kafka;
 
 public class KafkaProducerHostedService : IHostedService
 {
+    private readonly PeriodicTimer _timer = new(TimeSpan.FromSeconds(5));
     private readonly ILogger<KafkaProducerHostedService> _logger;
     private IProducer<long, string> _producer;
 
@@ -22,9 +23,11 @@ public class KafkaProducerHostedService : IHostedService
 
     public async Task StartAsync(CancellationToken cancellationToken)
     {
-        for (int i = 0; i < 10; i++)
+        int up = 0;
+
+        while (await _timer.WaitForNextTickAsync(cancellationToken) && !cancellationToken.IsCancellationRequested)
         {
-            string msg = $"Value is {i}";
+            string msg = $"Value is {up}";
 
             var res = await _producer.ProduceAsync("myApp", new Message<long, string>
             {
@@ -34,6 +37,8 @@ public class KafkaProducerHostedService : IHostedService
 
             _logger.LogInformation(res.Message.Value);
 
+            up++;
+
             if (res.Status != PersistenceStatus.Persisted)
             {
                 // delivery might have failed after retries. This message requires manual processing.
@@ -41,7 +46,7 @@ public class KafkaProducerHostedService : IHostedService
             }
         }
 
-        _producer.Flush(TimeSpan.FromSeconds(10));
+        //_producer.Flush(TimeSpan.FromSeconds(10));
     }
 
     public Task StopAsync(CancellationToken cancellationToken)
