@@ -1,6 +1,9 @@
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+using Playground.Api.Kafka.Receiver;
 
-app.MapGet("/", () => "Hello World!");
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddHostedService<KafkaConsumerHostedService>();
+
+var app = builder.Build();
 
 app.Run();

@@ -1,6 +1,6 @@
 ﻿using Confluent.Kafka;
 
-namespace Playground.Api.Kafka;
+namespace Playground.Api.Kafka.Receiver;
 
 public class KafkaConsumerHostedService : IHostedService
 {
