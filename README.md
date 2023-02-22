@@ -1,2 +1,3 @@
 # dotnetPlayground
-Compilation of My Random Projects
+
+These are my random ideas 🤷
