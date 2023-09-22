@@ -29,7 +29,7 @@ public class PngToJpgController : ControllerBase
                 Bitmap bmp = new Bitmap(img.Width, img.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
                 using (Graphics g = Graphics.FromImage(bmp))
                 {
-                    g.Clear(Color.White);
+                    g.Clear(Color.Orange);
                     g.DrawImage(img, new Rectangle(new Point(), img.Size), new Rectangle(new Point(), img.Size), GraphicsUnit.Pixel);
                 }
                 bmp.Save(path, System.Drawing.Imaging.ImageFormat.Jpeg);
