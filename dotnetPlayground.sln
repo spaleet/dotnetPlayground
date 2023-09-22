@@ -31,10 +31,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Api.Kafka", "API
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Api.Kafka.Receiver", "APIs\Kafka\Playground.Api.Kafka.Receiver\Playground.Api.Kafka.Receiver.csproj", "{BD18A3C1-614F-4167-B073-E38B2EDC917C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AddBackgroundToPng", "AddBackgroundToPng", "{CAD07B58-0CCB-4AE5-BECE-B86E4C01594D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Console.AddBackgroundToPng", "Console\Playground.Console.AddBackgroundToPng\Playground.Console.AddBackgroundToPng.csproj", "{D6498FD1-A2B6-4DA3-9FE9-43199BBBB663}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,10 +65,6 @@ Global
 		{BD18A3C1-614F-4167-B073-E38B2EDC917C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD18A3C1-614F-4167-B073-E38B2EDC917C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD18A3C1-614F-4167-B073-E38B2EDC917C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D6498FD1-A2B6-4DA3-9FE9-43199BBBB663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D6498FD1-A2B6-4DA3-9FE9-43199BBBB663}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D6498FD1-A2B6-4DA3-9FE9-43199BBBB663}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D6498FD1-A2B6-4DA3-9FE9-43199BBBB663}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,8 +82,6 @@ Global
 		{D0C50E4E-FC75-4E50-8F93-871C15A063A8} = {1BAB90E7-2F48-4CCF-933E-BB441DD3F757}
 		{73261670-F05E-40FD-A4CA-2F01AA942790} = {D0C50E4E-FC75-4E50-8F93-871C15A063A8}
 		{BD18A3C1-614F-4167-B073-E38B2EDC917C} = {D0C50E4E-FC75-4E50-8F93-871C15A063A8}
-		{CAD07B58-0CCB-4AE5-BECE-B86E4C01594D} = {A3BA08C7-FFCF-4804-902B-0B25723C93A3}
-		{D6498FD1-A2B6-4DA3-9FE9-43199BBBB663} = {CAD07B58-0CCB-4AE5-BECE-B86E4C01594D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F6F416B0-FE81-4DCE-B85B-CB958F7407BF}
