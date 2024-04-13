@@ -1,11 +1,12 @@
-﻿using Playground.MathFormulas.Variance_Calculator;
+﻿using Playground.MathFormulas.Utils;
+using Playground.MathFormulas.Variance_Calculator;
 
 var c = new VarianceCalc();
 
-var s = c.Calculate(new List<double>
+var x = new List<double>
 {
-    1, 3, 5, 7, 9
-});
+    1, 3, 5, 7, 8, 5, 6, 21
+};
 
-Console.WriteLine(s);
+Console.WriteLine(StatisticsUtils.GetMean(x));
 Console.ReadLine();
