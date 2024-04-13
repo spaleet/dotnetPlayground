@@ -31,6 +31,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Api.Kafka", "API
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Playground.Api.Kafka.Receiver", "APIs\Kafka\Playground.Api.Kafka.Receiver\Playground.Api.Kafka.Receiver.csproj", "{BD18A3C1-614F-4167-B073-E38B2EDC917C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.MathFormulas", "Console\Playground.MathFormulas\Playground.MathFormulas.csproj", "{4C58D7DB-F344-482C-8124-D308646F662A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{BD18A3C1-614F-4167-B073-E38B2EDC917C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD18A3C1-614F-4167-B073-E38B2EDC917C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD18A3C1-614F-4167-B073-E38B2EDC917C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C58D7DB-F344-482C-8124-D308646F662A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C58D7DB-F344-482C-8124-D308646F662A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C58D7DB-F344-482C-8124-D308646F662A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C58D7DB-F344-482C-8124-D308646F662A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +88,7 @@ Global
 		{D0C50E4E-FC75-4E50-8F93-871C15A063A8} = {1BAB90E7-2F48-4CCF-933E-BB441DD3F757}
 		{73261670-F05E-40FD-A4CA-2F01AA942790} = {D0C50E4E-FC75-4E50-8F93-871C15A063A8}
 		{BD18A3C1-614F-4167-B073-E38B2EDC917C} = {D0C50E4E-FC75-4E50-8F93-871C15A063A8}
+		{4C58D7DB-F344-482C-8124-D308646F662A} = {A3BA08C7-FFCF-4804-902B-0B25723C93A3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F6F416B0-FE81-4DCE-B85B-CB958F7407BF}
