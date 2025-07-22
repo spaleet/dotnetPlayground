@@ -1,3 +1,3 @@
-﻿Console.WriteLine(Path.GetRandomFileName());
+﻿Console.WriteLine("hellpo");
 
 Console.ReadKey();
